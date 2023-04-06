@@ -48,3 +48,6 @@ Thumbs.db
 *.mov
 *.wmv
 
+# Custom files
+
+coef.txt

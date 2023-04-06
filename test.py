@@ -1,7 +1,8 @@
 import numpy as np
-import csv
+import os
 
-PRICE_COLUMN_INDEX = 6
+
+FILE_COEF = "coef.txt"
 RANGE_M2 = (10, 800)
 RANGE_ROOMS = (1, 10)
 RANGE_FLOOR = (0, 15)
@@ -10,31 +11,17 @@ RANGE_ELEVATOR = (0, 1)
 def main():
     np.set_printoptions(precision=1)
 
-    with open("Prediccion_pisos.csv") as file:
-        reader = csv.reader(file)
-        header = next(reader)
-        data = []
-        for row in reader:
-            try:
-                values = [float(val) if idx != len(row)-1 else val for idx, val in enumerate(row[1:-1])]
-                data.append(values)
-            except ValueError:
-                print("a")
-                pass  # omitir la fila si no se puede convertir a float
-        data = np.array(data)
+    if not os.path.isfile(FILE_COEF):
+        print("Missing coef file. Training...")
+        os.system("python train.py")
 
-    prices = data[:,PRICE_COLUMN_INDEX]
-    values = np.delete(data, PRICE_COLUMN_INDEX, 1)
+    c = np.loadtxt(FILE_COEF)
 
-    c = np.linalg.lstsq(values, prices, rcond=None)[0]
+    building = ask_building_data()
 
-    # print(values @ c)
+    print("El precio predecido para ese piso es de", round(building @ c, 2), "€")
 
-    building = askBuildingData()
-
-    print ("El precio predecido para ese piso es de", round(building @ c, 2), "€")
-
-def askBuildingData():
+def ask_building_data():
 
     while True:
         try:
