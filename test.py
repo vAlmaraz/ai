@@ -35,13 +35,13 @@ def ask_building_data():
     )
 
     floor = ask_integer(
-        f"What floor it is ({RANGE_FLOOR[0]}-{RANGE_FLOOR[1]})? ",
+        f"What floor is it ({RANGE_FLOOR[0]}-{RANGE_FLOOR[1]})? ",
         RANGE_FLOOR,
         "Error: floor must be a number between {RANGE_FLOOR[0]} and {RANGE_FLOOR[1]}"
     )
 
     elevator = ask_integer(
-        f"Tiene ascensor ({RANGE_ELEVATOR[0]} si es que no, {RANGE_ELEVATOR[1]} para sí)? ",
+        f"Does it have elevator ({RANGE_ELEVATOR[0]} for no, {RANGE_ELEVATOR[1]} for yes)? ",
         RANGE_ELEVATOR,
         f"Error: elevator must be {RANGE_ELEVATOR[0]} or {RANGE_ELEVATOR[1]}"
     )
