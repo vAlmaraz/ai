@@ -47,7 +47,3 @@ Thumbs.db
 *.flv
 *.mov
 *.wmv
-
-# Custom files
-
-coef.txt

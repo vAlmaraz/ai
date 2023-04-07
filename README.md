@@ -1,6 +1,8 @@
 # Introduction
 
-This is a repository with simple AI examples in Python, developed just for learning purposes.
+This is a repository with simple Python AI examples, developed just for learning purposes.
+This readme includes images and a summary of AI concepts based on Elements of AI courses:
+https://www.elementsofai.com/
 
 # Game trees & Minimizing and maximizing value
 
