@@ -1,11 +1,15 @@
 # Introduction
 
+This is a repository with simple AI examples in Python, developed just for learning purposes.
+
 # Game trees & Minimizing and maximizing value
 
 Technique to solve games by representing each states as a node in a tree.
 The idea is assigning a numeric value to each possible result, for example, a positive value when one player wins, a negative when the other wins, and zero in case of tie.
 So from the final nodes to the beginning, each node will be assigned the result value. When there are different branches that reach to different results, we assign the value of the player who plays now.
 Determining the winner is just a matter of choosing the optimal route.
+
+![Min Max](img/minmax.png)
 
 # Odds and probability
 
@@ -47,13 +51,17 @@ posterior odds = likelihood ratio of a new situation * prior odds
 
 - Nearest: distance or similarity between instances
 - Produces labels from a fixed set of alternatives (classes)
-. Used for example to predict customer behaviors, similar to others who bought the same
+- Used for example to predict customer behaviors, similar to others who bought the same
+
+![Nearest Neighbor](img/nearest.png)
 
 ## Linear Regression
 
 - Produces numerical outputs
 - An increment in the result when an input specification (coefficient or weight) is increased on a fixed quantity, is always the same
 - The learning technique consists of finding the coefficients from data about tons of results
+
+![Linear Regression](img/regression.png)
 
 ## Logistic regression
 
