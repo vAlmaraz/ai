@@ -18,32 +18,32 @@ def main():
 
     building = ask_building_data()
 
-    print("El precio predecido para ese piso es de", round(building @ c, 2), "€")
+    print("The predicted price for this building is", round(building @ c, 2), "€")
 
 def ask_building_data():
 
     m2 = ask_integer(
-        f"Cuántos metros cuadrados tiene el piso ({RANGE_M2[0]}-{RANGE_M2[1]})? ",
+        f"How many m2 does it have ({RANGE_M2[0]}-{RANGE_M2[1]})? ",
         RANGE_M2,
-        f"Error: los metros cuadrados deben estar entre {RANGE_M2[0]} y {RANGE_M2[1]}"
+        f"Error: m2 must be a number between {RANGE_M2[0]} and {RANGE_M2[1]}"
     )
 
     rooms = ask_integer(
-        f"Cuántas habitaciones tiene ({RANGE_ROOMS[0]}-{RANGE_ROOMS[1]})? ",
+        f"How many rooms ({RANGE_ROOMS[0]}-{RANGE_ROOMS[1]})? ",
         RANGE_ROOMS,
-        f"Error: el número de habitaciones debe estar entre {RANGE_ROOMS[0]} y {RANGE_ROOMS[1]}"
+        f"Error: rooms must be a number between {RANGE_ROOMS[0]} and {RANGE_ROOMS[1]}"
     )
 
     floor = ask_integer(
-        f"Cuál es la planta del piso ({RANGE_FLOOR[0]}-{RANGE_FLOOR[1]})? ",
+        f"What floor it is ({RANGE_FLOOR[0]}-{RANGE_FLOOR[1]})? ",
         RANGE_FLOOR,
-        "Error: la planta del piso debe estar entre {RANGE_FLOOR[0]} y {RANGE_FLOOR[1]}"
+        "Error: floor must be a number between {RANGE_FLOOR[0]} and {RANGE_FLOOR[1]}"
     )
 
     elevator = ask_integer(
         f"Tiene ascensor ({RANGE_ELEVATOR[0]} si es que no, {RANGE_ELEVATOR[1]} para sí)? ",
         RANGE_ELEVATOR,
-        f"Error: el valor del ascensor debe estar entre {RANGE_ELEVATOR[0]} y {RANGE_ELEVATOR[1]}"
+        f"Error: elevator must be {RANGE_ELEVATOR[0]} or {RANGE_ELEVATOR[1]}"
     )
 
     return np.array([37, 1, m2, rooms, floor, elevator])
