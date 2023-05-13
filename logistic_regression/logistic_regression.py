@@ -36,6 +36,7 @@ sc_x = StandardScaler()
 X_train = sc_x.fit_transform(X_train)
 X_test = sc_x.transform(X_test)
 
+# Train the model
 model = LogisticRegression()
 model.fit(X_train, y_train)
 

@@ -20,7 +20,7 @@ def main():
         data = []
         for row in reader:
             try:
-                values = [float(val) if idx != len(row)-1 else val for idx, val in enumerate(row[0:-1])]
+                values = [float(val) for val in row]
                 data.append(values)
             except ValueError:
                 pass
