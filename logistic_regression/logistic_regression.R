@@ -37,3 +37,6 @@ predicted.classes <- ifelse(probabilities > 0.5, 1, 0)
 
 # Get model accuracy
 mean(predicted.classes == testData$RainTomorrow)
+
+# Draw it
+# TODO: Draw it
