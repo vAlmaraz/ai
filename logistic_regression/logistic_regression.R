@@ -22,6 +22,7 @@ trainRate <- randomIndexes[1:splitRate]
 trainData <- weatherData[trainRate, ]
 testData <- weatherData[-trainRate, ]
 
+# Train the model
 model <- glm( RainTomorrow ~., data = trainData, family = binomial)
 # POSSIBLE ERROR: 
 # Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]) : contrasts can be applied only to factors with 2 or more levels

@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 
@@ -29,6 +30,11 @@ train_idx, test_idx = indexes[:train_size], indexes[train_size:]
 # Split data into train and test
 X_train, y_train = X.iloc[train_idx, :], y[train_idx]
 X_test, y_test = X.iloc[test_idx, :], y[test_idx]
+
+# Variables that are measured at different scales do not contribute equally to the model fitting & model learned function and might end up creating a bias
+sc_x = StandardScaler()
+X_train = sc_x.fit_transform(X_train)
+X_test = sc_x.transform(X_test)
 
 model = LogisticRegression()
 model.fit(X_train, y_train)
