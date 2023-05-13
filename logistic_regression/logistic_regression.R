@@ -10,6 +10,9 @@ weatherData <- subset(weatherData, select = -c(Date))
 # Omit rows without available values
 weatherData <- na.omit(weatherData)
 
+# Convert RainTomorrow into 0 and 1 instead of No and Yes
+weatherData$RainTomorrow <- ifelse(weatherData$RainTomorrow == "Yes", 1, 0)
+
 set.seed(123)
 # Calculate random indexes and split into two groups. Train data will include 70% of data
 randomIndexes <- sample(1:nrow(weatherData))
@@ -18,10 +21,6 @@ trainRate <- randomIndexes[1:splitRate]
 # Split data into train and test
 trainData <- weatherData[trainRate, ]
 testData <- weatherData[-trainRate, ]
-
-# Convert RainTomorrow into 0 and 1 instead of No and Yes
-trainData$RainTomorrow <- ifelse(trainData$RainTomorrow == "Yes", 1, 0)
-
 
 model <- glm( RainTomorrow ~., data = trainData, family = binomial)
 # POSSIBLE ERROR: 
@@ -33,7 +32,7 @@ model <- glm( RainTomorrow ~., data = trainData, family = binomial)
 
 # Test the model
 probabilities <- predict(model, testData, type = "response")
-predicted.classes <- ifelse(probabilities > 0.5, "Yes", "No")
+predicted.classes <- ifelse(probabilities > 0.5, 1, 0)
 
-# Sacamos la precisión del modelo de test
+# Get model accuracy
 mean(predicted.classes == testData$RainTomorrow)
