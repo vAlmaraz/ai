@@ -4,7 +4,7 @@ import sys
 import csv
 
 PRICE_COLUMN_INDEX = 6
-FILE_TRAINING = "buildings.csv"
+FILE_TRAINING = "../datasets/buildings.csv"
 FILE_COEF = "coef.txt"
 
 def main():

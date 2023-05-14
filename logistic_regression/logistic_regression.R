@@ -1,6 +1,6 @@
 # Read Weather data file
 setwd(getwd())
-pathFile <- file.path("weather.csv")
+pathFile <- file.path("../datasets/weather.csv")
 weatherData <- read.csv(pathFile, stringsAsFactors = FALSE)
 
 # Ignore dates (in order to prevent error when predicting)

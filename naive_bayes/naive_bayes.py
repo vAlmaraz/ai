@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import LogisticRegression
+from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score
 
 # Read Weather data file
@@ -37,7 +37,7 @@ X_train = sc_x.fit_transform(X_train)
 X_test = sc_x.transform(X_test)
 
 # Train the model
-model = LogisticRegression()
+model = GaussianNB()
 model.fit(X_train, y_train)
 
 # Test the model
@@ -48,4 +48,4 @@ accuracy = accuracy_score(y_test, y_pred)
 print("Model accuracy on test data:", accuracy)
 
 # Draw it
-# TODO: Draw it
+# TODO

@@ -2,7 +2,7 @@ library("e1071")
 
 # Read Cats data file
 setwd(getwd())
-pathFile <- file.path("dataset-32337.csv")
+pathFile <- file.path("../datasets/dataset-32337.csv")
 catsData <- read.csv(pathFile, stringsAsFactors = FALSE)
 
 # Convert Sex into 0 and 1 instead of M and F

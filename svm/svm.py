@@ -5,7 +5,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn import svm
 
 # Read Cats data file
-catsData = pd.read_csv('dataset-32337.csv')
+catsData = pd.read_csv('../datasets/dataset-32337.csv')
 
 # Convert Sex into 0 and 1 instead of M and F
 catsData["Sex"] = np.where(catsData["Sex"] == "F", 1, 0)
