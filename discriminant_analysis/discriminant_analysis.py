@@ -27,7 +27,8 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
 # Get model accuracy
-accuracy_score(y_test, y_pred)
+accuracy = accuracy_score(y_test, y_pred)
+print("Model accuracy on test data:", accuracy)
 
 # Draw it
 plt.subplot(2, 2, 1)
