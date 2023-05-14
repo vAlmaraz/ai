@@ -7,11 +7,13 @@ Please see the wiki for all the instructions and summaries.
 ## R examples
 
 In order to run R examples, it requires installing R.
-I also recommend RStudio.
-https://posit.co/download/rstudio-desktop/
 
+I also recommend RStudio.
+
+https://posit.co/download/rstudio-desktop/
 
 ## Python examples
 
-Some examples include plots. I recommend using cloud Anaconda Cloud version.
+Some examples include plots. I recommend using Anaconda Cloud version.
+
 https://www.anaconda.com/code-in-the-cloud
